@@ -164,7 +164,8 @@ export interface CommonNotificationDocumentStructure
   description: string;
 }
 
-export interface ResearcherNotificationDocumentStructure {
+export interface ResearcherNotificationDocumentStructure
+  extends CommonNotificationDocumentStructure {
   code:
     | "CREATE_ACCOUNT"
     | "DELETE_ACCOUNT"
@@ -176,7 +177,8 @@ export interface ResearcherNotificationDocumentStructure {
     | "MEETING_NOW";
 }
 
-export interface ParticipantNotificationDocumentStructure {
+export interface ParticipantNotificationDocumentStructure
+  extends CommonNotificationDocumentStructure {
   code:
     | "CREATE_ACCOUNT"
     | "DELETE_ACCOUNT"
@@ -424,6 +426,8 @@ export interface UpdateReminderPayload extends UpdateTracking {
 export interface ConfirmReminderPayload extends UpdateTracking {
   confirmedByParticipant: true;
 }
+
+// firebase auth
 
 export interface FirebaseUser {
   uid: string;
